@@ -92,6 +92,18 @@ module.exports = {
         name: "DiVisualstudio",
         color: "deepskyblue",
       },
+      {
+        tag: "dotnet",
+        path: "Di",
+        name: "DiDotnet",
+        color: "deepskyblue",
+      },
+      {
+        tag: "azure",
+        path: "Fa",
+        name: "FaCloud",
+        color: "deepskyblue",
+      },
     ],
   },
   plugins: [

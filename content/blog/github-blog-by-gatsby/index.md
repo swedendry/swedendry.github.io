@@ -5,7 +5,7 @@ tags: ["react", "github"]
 description: "GitHub 블로그 만들기"
 ---
 
-## 필수 조건
+## 조건
 + github repository(username/github.io)
 + npm
 + node.js
@@ -37,7 +37,7 @@ gatsby develop
      ~~~
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master"
   }
-  
+
 #gatsby-config.js 수정
 #package.json 수정
 ```

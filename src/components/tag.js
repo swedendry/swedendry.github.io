@@ -27,7 +27,7 @@ const Tag = props => {
   return (
     <div style={{ display: "inline-block" }}>
       <Link to={`/tags/${tag}/`}>
-        <div style={{ color: color }}>{icon}</div>
+        <div style={{ color: color }} title={tag}>{icon}</div>
         {/* <div style={{ fontSize: size, color: color }}>{icon}</div> */}
       </Link>
     </div>
