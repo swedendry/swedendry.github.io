@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "swedendry-show",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "swedendry show",
+  "version": "1.0.0",
+  "author": "swedendry <swedendry@naver.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/swedendry/swedendry.github.io/issues"
   },
   "dependencies": {
     "gatsby": "^2.17.11",
@@ -29,6 +29,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
+    "react-icons": "^3.8.0",
     "react-typography": "^0.16.19",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
@@ -38,15 +39,15 @@
   "devDependencies": {
     "prettier": "^1.19.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/swedendry/swedendry.github.io#readme",
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "swedendry",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/swedendry/swedendry.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",
@@ -54,6 +55,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }

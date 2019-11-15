@@ -1,26 +1,17 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import _ from "lodash"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Tag from "../components/tag"
 import { rhythm } from "../utils/typography"
 
-class BlogIndex extends React.Component {
+class TagTemplate extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const icons = data.site.siteMetadata.icons
     const posts = data.allMarkdownRemark.edges
-
-    const getAllTags = () => {
-      const tags = []
-      posts.map(({ node }) => node.frontmatter.tags.map(tag => tags.push(tag)))
-
-      return _.uniq(tags)
-    }
 
     const tagView = tags => {
       const views = []
@@ -45,10 +36,6 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
-        <div style={{ fontSize: 40, backgroundColor: "white" }}>
-          {tagView(getAllTags())}
-        </div>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const tags = node.frontmatter.tags
@@ -86,10 +73,10 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default TagTemplate
 
 export const pageQuery = graphql`
-  query {
+  query($tag: String) {
     site {
       siteMetadata {
         title
@@ -101,10 +88,13 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1000
+      filter: { frontmatter: { tags: { in: [$tag] } } }
+    ) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }

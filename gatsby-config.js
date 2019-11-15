@@ -1,12 +1,98 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `swedendry show`,
+    author: `swedendry`,
+    description: `swedendry`,
+    siteUrl: `https://swedendry.github.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: ``,
     },
+    icons: [
+      {
+        tag: "react",
+        path: "Di",
+        name: "DiReact",
+        color: "deepskyblue",
+      },
+      {
+        tag: "nodejs",
+        path: "Di",
+        name: "DiNodejsSmall",
+        color: "lightgreen",
+      },
+      {
+        tag: "git",
+        path: "Di",
+        name: "DiGitMerge",
+        color: "black",
+      },
+      {
+        tag: "github",
+        path: "Go",
+        name: "GoMarkGithub",
+        color: "black",
+      },
+      {
+        tag: "javascript",
+        path: "Di",
+        name: "DiJsBadge",
+        color: "yellow",
+      },
+      {
+        tag: "css",
+        path: "Di",
+        name: "DiCss3Full",
+        color: "teal",
+      },
+      {
+        tag: "python",
+        path: "Di",
+        name: "DiPython",
+        color: "deepskyblue",
+      },
+      {
+        tag: "ruby",
+        path: "Di",
+        name: "DiRuby",
+        color: "crimson",
+      },
+      {
+        tag: "java",
+        path: "Fa",
+        name: "FaJava",
+        color: "wheat",
+      },
+      {
+        tag: "angular",
+        path: "Di",
+        name: "DiAngularSimple",
+        color: "red",
+      },
+      {
+        tag: "html",
+        path: "Fa",
+        name: "FaHtml5",
+        color: "darkorange",
+      },
+      {
+        tag: "php",
+        path: "Di",
+        name: "DiPhp",
+        color: "violet",
+      },
+      {
+        tag: "mongodb",
+        path: "Di",
+        name: "DiMongodb",
+        color: "green",
+      },
+      {
+        tag: "vscode",
+        path: "Di",
+        name: "DiVisualstudio",
+        color: "deepskyblue",
+      },
+    ],
   },
   plugins: [
     {

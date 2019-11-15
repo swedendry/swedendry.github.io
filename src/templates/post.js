@@ -4,13 +4,36 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Tag from "../components/tag"
 import { rhythm, scale } from "../utils/typography"
 
-class BlogPostTemplate extends React.Component {
+class PostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const { data } = this.props
+    const post = data.markdownRemark
+    const siteTitle = data.site.siteMetadata.title
+    const icons = data.site.siteMetadata.icons
     const { previous, next } = this.props.pageContext
+
+    const tagView = tags => {
+      const views = []
+      tags.forEach((tag, i) => {
+        icons.forEach(icon => {
+          if (tag === icon.tag)
+            views.push(
+              <Tag
+                key={i}
+                tag={icon.tag}
+                path={icon.path}
+                name={icon.name}
+                color={icon.color}
+              />
+            )
+        })
+      })
+
+      return views
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -28,7 +51,7 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.title}
             </h1>
-            <p
+            <small
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
@@ -36,7 +59,10 @@ class BlogPostTemplate extends React.Component {
               }}
             >
               {post.frontmatter.date}
-            </p>
+              <div style={{ fontSize: 25, float: "right" }}>
+                {tagView(post.frontmatter.tags)}
+              </div>
+            </small>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -80,13 +106,19 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default PostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query($slug: String!) {
     site {
       siteMetadata {
         title
+        icons {
+          tag
+          path
+          name
+          color
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -95,7 +127,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
+        tags
         description
       }
     }
