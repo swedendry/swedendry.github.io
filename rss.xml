@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[swedendry show]]></title><description><![CDATA[swedendry]]></description><link>https://swedendry.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 15 Nov 2019 02:15:20 GMT</lastBuildDate><item><title><![CDATA[GitHub 블로그 만들기 by Gatsby]]></title><description><![CDATA[필수 조건 npm node.js Gatsby 설치 Gatsby 샘플 https://github.com/gatsbyjs/gatsby-starter-blog 실행 localhost:8000/ 확인 GitHub 연동]]></description><link>https://swedendry.github.io/github-blog-by-gatsby/</link><guid isPermaLink="false">https://swedendry.github.io/github-blog-by-gatsby/</guid><pubDate>Thu, 14 Nov 2019 17:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;필수 조건&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;npm&lt;/li&gt;
+&lt;li&gt;node.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Gatsby 설치&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install -g gatsby-cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Gatsby 샘플&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/gatsbyjs/gatsby-starter-blog&quot;&gt;https://github.com/gatsbyjs/gatsby-starter-blog&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;실행&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;gatsby develop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;localhost:8000/ 확인&lt;/p&gt;
+&lt;h2&gt;GitHub 연동&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
