@@ -1,15 +1,201 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[swedendry show]]></title><description><![CDATA[swedendry]]></description><link>https://swedendry.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 15 Nov 2019 02:15:20 GMT</lastBuildDate><item><title><![CDATA[GitHub 블로그 만들기 by Gatsby]]></title><description><![CDATA[필수 조건 npm node.js Gatsby 설치 Gatsby 샘플 https://github.com/gatsbyjs/gatsby-starter-blog 실행 localhost:8000/ 확인 GitHub 연동]]></description><link>https://swedendry.github.io/github-blog-by-gatsby/</link><guid isPermaLink="false">https://swedendry.github.io/github-blog-by-gatsby/</guid><pubDate>Thu, 14 Nov 2019 17:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;필수 조건&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[swedendry show]]></title><description><![CDATA[swedendry]]></description><link>https://swedendry.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 15 Nov 2019 08:06:07 GMT</lastBuildDate><item><title><![CDATA[Azure Traffic Manager]]></title><description><![CDATA[…]]></description><link>https://swedendry.github.io/azure/network/traffic-manager/</link><guid isPermaLink="false">https://swedendry.github.io/azure/network/traffic-manager/</guid><pubDate>Fri, 15 Nov 2019 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;라우팅 방법&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;우선 순위&lt;/strong&gt;: 모든 트래픽에 대해 기본 서비스 엔드포인트를 사용하고 기본 또는 백업 엔드포인트를 사용할 수 없을 때 백업을 제공하려면 우선 순위를 선택합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;가중&lt;/strong&gt;: 여러 엔드포인트에 균일하게 또는 정의한 가중치에 따라 트래픽을 분산하려면 가중을 선택합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;성능&lt;/strong&gt;: 엔드포인트가 서로 다른 지역에 있고 최종 사용자가 가장 짧은 네트워크 대기 시간을 기준으로 “가장 가까운” 엔드포인트를 사용하게 하려는 경우 성능을 선택합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;지리적&lt;/strong&gt;: 사용자가 해당 DNS 쿼리가 시작된 지리적 위치를 기준으로 특정 엔드포인트(Azure, 외부 또는 중첩)로 리디렉션되게 하려면 지리적을 선택합니다. 이렇게 하면 Traffic Manager 고객이 사용자의 지리적 위치를 파악하고 그에 따라 라우팅되는 중요한 시나리오를 사용할 수 있습니다. 데이터 독립성 지시 사항, 콘텐츠 및 사용자 환경의 지역화를 준수하고 다른 지역의 트래픽을 측정하는 작업을 예로 들 수 있습니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;다중값&lt;/strong&gt;: 엔드포인트로 IPv4/IPv6 주소만 사용할 수 있는 Traffic Manager 프로필의 경우 다중값을 선택합니다. 이 프로필에 대해 쿼리가 수신되면 정상 상태의 모든 엔드포인트가 반환됩니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;서브넷&lt;/strong&gt;: 최종 사용자 IP 주소 범위 집합을 Traffic Manager 프로필 내의 특정 엔드포인트로 매핑하려면 서브넷 트래픽 라우팅 방법을 선택합니다. 요청이 수신되면 해당 요청의 원본 IP 주소에 대해 매핑될 엔드포인트가 반환됩니다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;조건&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;webapp 2개(서로 다른 지역)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;만들기&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;리소스 만들기 &gt; Traffic Manager Profile&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;설정&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;값&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;라우팅방법&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;성능&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8d826388070dd139d4ca0494cd2eb34f/394ea/traffic-manager-profile.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIEBv/EABQBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAbxdSQhYv//EABoQAAICAwAAAAAAAAAAAAAAAAIRAAQQEzL/2gAIAQEAAQUCtPcigcZ//8QAFREBAQAAAAAAAAAAAAAAAAAAEBL/2gAIAQMBAT8Bk//EABURAQEAAAAAAAAAAAAAAAAAABAS/9oACAECAQE/AaP/xAAbEAABBAMAAAAAAAAAAAAAAAAAAQIRMSAhcf/aAAgBAQAGPwLU0Uo3mH//xAAaEAACAgMAAAAAAAAAAAAAAAAAARExIKHx/9oACAEBAAE/IVqQhRxWazD/2gAMAwEAAgADAAAAEDvP/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQEQ/9oACAEDAQE/EK6uf//EABYRAQEBAAAAAAAAAAAAAAAAABEBEP/aAAgBAgEBPxCCBn//xAAcEAEBAAEFAQAAAAAAAAAAAAABEQAgITFBUXH/2gAIAQEAAT8Qc1PKDO/MZOJRS3cvw0f/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Traffic Manager Profile&quot;
+        title=&quot;Traffic Manager Profile&quot;
+        src=&quot;/static/8d826388070dd139d4ca0494cd2eb34f/c739e/traffic-manager-profile.jpg&quot;
+        srcset=&quot;/static/8d826388070dd139d4ca0494cd2eb34f/8ee9c/traffic-manager-profile.jpg 148w,
+/static/8d826388070dd139d4ca0494cd2eb34f/ebbe7/traffic-manager-profile.jpg 295w,
+/static/8d826388070dd139d4ca0494cd2eb34f/c739e/traffic-manager-profile.jpg 590w,
+/static/8d826388070dd139d4ca0494cd2eb34f/5413e/traffic-manager-profile.jpg 885w,
+/static/8d826388070dd139d4ca0494cd2eb34f/4efde/traffic-manager-profile.jpg 1180w,
+/static/8d826388070dd139d4ca0494cd2eb34f/394ea/traffic-manager-profile.jpg 2304w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;추가&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Traffic Manager 프로필 &gt; 설정 &gt; 엔드포인트1 추가&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;설정&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;값&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;형식&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;Azure endpoint&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;대상 리소스 종류&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;App Service&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;대상 리소스&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;1번째 앱&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Traffic Manager 프로필 &gt; 설정 &gt; 엔드포인트2 추가&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;설정&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;값&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;형식&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;Azure endpoint&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;대상 리소스 종류&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;App Service&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;대상 리소스&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;2번째 앱&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Azure Sql Elastic Pool]]></title><description><![CDATA[구매 모델 VCore DTU 만들기 리소스 만들기 > SQL Elastic Database Pool 설정 값 서버 new or select 구성 SQL Elastic Database Pool > 구성 > 데이터베이스 > 추가]]></description><link>https://swedendry.github.io/azure/database/azure-sql-database/sql-elastic-pool/</link><guid isPermaLink="false">https://swedendry.github.io/azure/database/azure-sql-database/sql-elastic-pool/</guid><pubDate>Fri, 15 Nov 2019 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;구매 모델&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;VCore&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DTU&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;만들기&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;리소스 만들기 &gt; SQL Elastic Database Pool&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;설정&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;값&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;서버&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;new or select&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;구성&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SQL Elastic Database Pool &gt; 구성 &gt; 데이터베이스 &gt; 추가&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[Azure Sql Failover Group]]></title><description><![CDATA[조건 azure sql server 2개(서로 다른 지역) 구성 Azure Sql Server > 장애 조치 그룹 > 그룹 추가 테스트 Azure Sql Server > 장애 조치 그룹 > 그룹 선택 > Failover]]></description><link>https://swedendry.github.io/azure/database/azure-sql-database/failover-group/</link><guid isPermaLink="false">https://swedendry.github.io/azure/database/azure-sql-database/failover-group/</guid><pubDate>Fri, 15 Nov 2019 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;조건&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;azure sql server 2개(서로 다른 지역)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;구성&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Azure Sql Server &gt; 장애 조치 그룹 &gt; 그룹 추가&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;테스트&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Azure Sql Server &gt; 장애 조치 그룹 &gt; 그룹 선택 &gt; Failover&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[Azure Sql Geo Replication]]></title><description><![CDATA[조건 azure sql server azure sql database 구성 Azure Sql Database > 지역에서 복제 > 다른 지역 선택 테스트 Azure Sql Database > 지역에서 복제 > Failover]]></description><link>https://swedendry.github.io/azure/database/azure-sql-database/Geo-Replication/</link><guid isPermaLink="false">https://swedendry.github.io/azure/database/azure-sql-database/Geo-Replication/</guid><pubDate>Fri, 15 Nov 2019 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;조건&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;azure sql server&lt;/li&gt;
+&lt;li&gt;azure sql database&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;구성&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Azure Sql Database &gt; 지역에서 복제 &gt; 다른 지역 선택&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;테스트&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Azure Sql Database &gt; 지역에서 복제 &gt; Failover &lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[GitHub 블로그 만들기 by Gatsby]]></title><description><![CDATA[조건 github repository(username/github.io) npm node.js gatsby gh-pages 설치 Gatsby 코드 수정 GitHub]]></description><link>https://swedendry.github.io/github-blog-by-gatsby/</link><guid isPermaLink="false">https://swedendry.github.io/github-blog-by-gatsby/</guid><pubDate>Thu, 14 Nov 2019 17:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;조건&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;github repository(username/github.io)&lt;/li&gt;
 &lt;li&gt;npm&lt;/li&gt;
 &lt;li&gt;node.js&lt;/li&gt;
+&lt;li&gt;gatsby&lt;/li&gt;
+&lt;li&gt;gh-pages&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Gatsby 설치&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install -g gatsby-cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Gatsby 샘플&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/gatsbyjs/gatsby-starter-blog&quot;&gt;https://github.com/gatsbyjs/gatsby-starter-blog&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;실행&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;gatsby develop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;localhost:8000/ 확인&lt;/p&gt;
-&lt;h2&gt;GitHub 연동&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
+&lt;h2&gt;설치&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;#gatsby 설치
+npm install -g gatsby-cli
+
+#gh-pages 설치
+npm install gh-pages --save-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Gatsby&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;#https://github.com/gatsbyjs/gatsby-starter-blog 샘플 설치
+gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
+gatsby develop
+
+#localhost:8000/ 확인&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;코드 수정&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;#package.json deploy 추가
+ &amp;quot;scripts&amp;quot;: {
+     ~~~
+    &amp;quot;deploy&amp;quot;: &amp;quot;gatsby build --prefix-paths &amp;amp;&amp;amp; gh-pages -d public -b master&amp;quot;
+  }
+
+#gatsby-config.js 수정
+#package.json 수정&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;GitHub&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;#develop branch에 개발 리소스 올리기
+git remote add origin `repository`
+git branch develop
+git checkout develop
+git push -u origin develop
+
+#master branch에 빌드 리소스 올리기
+npm run deploy
+
+#username/github.io/ 확인&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
