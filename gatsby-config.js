@@ -27,12 +27,6 @@ module.exports = {
         color: "black",
       },
       {
-        tag: "github",
-        path: "Go",
-        name: "GoMarkGithub",
-        color: "black",
-      },
-      {
         tag: "javascript",
         path: "Di",
         name: "DiJsBadge",
@@ -93,6 +87,12 @@ module.exports = {
         color: "deepskyblue",
       },
       {
+        tag: "github",
+        path: "Go",
+        name: "GoMarkGithub",
+        color: "black",
+      },
+      {
         tag: "dotnet",
         path: "Di",
         name: "DiDotnet",
@@ -103,6 +103,24 @@ module.exports = {
         path: "Fa",
         name: "FaCloud",
         color: "deepskyblue",
+      },
+      {
+        tag: "grammar",
+        path: "Fa",
+        name: "FaBook",
+        color: "darkred",
+      },
+      {
+        tag: "db",
+        path: "Go",
+        name: "GoDatabase",
+        color: "dimgray",
+      },
+      {
+        tag: "network",
+        path: "Fa",
+        name: "FaNetworkWired",
+        color: "dimgray",
       },
     ],
   },

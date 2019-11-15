@@ -1,7 +1,7 @@
 ---
 title: Azure Sql Elastic Pool
 date: "2019-11-15T15:00:00.000Z"
-tags: ["azure"]
+tags: ["azure", "db"]
 description: "Azure Sql Elastic Pool"
 ---
 
