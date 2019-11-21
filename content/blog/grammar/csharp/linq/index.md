@@ -5,12 +5,77 @@ tags: ["grammar"]
 description: "C# Linq 문법"
 ---
 
+## Select
+```c#
+#lambda
+items.Select(item => item.id)
+
+#query
+from item in items
+select item.id
+```
+
+## SelectMany
+```c#
+#lambda
+items.SelectMany(item => item.Stats)
+
+#query
+from item in items
+from stat in item.Stats
+select stat;
+```
+
 ## Where
 ```c#
+#lambda
+items.Where(item => item.count < 10)
+
 #query
 from item in items
 where item.count < 10
-
-#lambda
-items.Where(item => item.count < 10)
+select item
 ```
+
+## Orderby
+```c#
+#lambda
+items.OrderBy(item => item.Type).ThenByDescending(item => item.Stats.Average())
+
+#query
+from item in items
+orderby item.Type ascending, item.Stats.Average() descending
+select item
+```
+
+## GroupBy
+```c#
+#lambda
+items.GroupBy(item => item.Type)
+
+#query
+from item in items
+group item by item.Type into g
+select g
+```
+
+## Take
+```c#
+#lambda
+items.Take(2)
+
+#query
+(from item in items
+ select item).Take(2)
+```
+
+## Skip
+```c#
+#lambda
+items.Skip(2)
+
+#query
+(from item in items
+ select item).Skip(2)
+```
+
