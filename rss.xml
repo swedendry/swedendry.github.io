@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[swedendry show]]></title><description><![CDATA[swedendry]]></description><link>https://swedendry.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 15 Nov 2019 09:30:16 GMT</lastBuildDate><item><title><![CDATA[Markdown 문법]]></title><description><![CDATA[제목 강조 이미지 테이블 설정 값 방법 테이블]]></description><link>https://swedendry.github.io/grammar/markdown/</link><guid isPermaLink="false">https://swedendry.github.io/grammar/markdown/</guid><pubDate>Fri, 15 Nov 2019 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;제목&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[swedendry show]]></title><description><![CDATA[swedendry]]></description><link>https://swedendry.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 21 Nov 2019 07:11:36 GMT</lastBuildDate><item><title><![CDATA[Markdown 문법]]></title><description><![CDATA[제목 강조 이미지 테이블 설정 값 방법 테이블]]></description><link>https://swedendry.github.io/grammar/markdown/</link><guid isPermaLink="false">https://swedendry.github.io/grammar/markdown/</guid><pubDate>Fri, 15 Nov 2019 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;제목&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;markdown&quot;&gt;&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;#&lt;/span&gt; 제목 1&lt;/span&gt;
 &lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;##&lt;/span&gt; 제목 2&lt;/span&gt;
 &lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;###&lt;/span&gt; 제목 3&lt;/span&gt;
@@ -184,13 +184,7 @@
 &lt;h2&gt;구성&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;SQL Elastic Database Pool &gt; 구성 &gt; 데이터베이스 &gt; 추가&lt;/p&gt;
-&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[C# Linq 문법]]></title><description><![CDATA[Where]]></description><link>https://swedendry.github.io/grammar/csharp/linq/</link><guid isPermaLink="false">https://swedendry.github.io/grammar/csharp/linq/</guid><pubDate>Fri, 15 Nov 2019 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Where&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c#&quot;&gt;&lt;pre class=&quot;language-c#&quot;&gt;&lt;code class=&quot;language-c#&quot;&gt;#query
-from item in items
-where item.count &amp;lt; 10
-
-#lambda
-items.Where(item =&amp;gt; item.count &amp;lt; 10)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Redis 문법]]></title><description><![CDATA[set get keys]]></description><link>https://swedendry.github.io/grammar/redis/</link><guid isPermaLink="false">https://swedendry.github.io/grammar/redis/</guid><pubDate>Fri, 15 Nov 2019 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;set&lt;/h2&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[Redis 문법]]></title><description><![CDATA[set get keys]]></description><link>https://swedendry.github.io/grammar/redis/</link><guid isPermaLink="false">https://swedendry.github.io/grammar/redis/</guid><pubDate>Fri, 15 Nov 2019 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;set&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;redis&quot;&gt;&lt;pre class=&quot;language-redis&quot;&gt;&lt;code class=&quot;language-redis&quot;&gt;set key &amp;quot;value&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;get&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;redis&quot;&gt;&lt;pre class=&quot;language-redis&quot;&gt;&lt;code class=&quot;language-redis&quot;&gt;get key&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -220,7 +214,59 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Users&lt;span cl
 &lt;span class=&quot;token keyword&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; Users &lt;span class=&quot;token keyword&quot;&gt;where&lt;/span&gt; Lv &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;
 
 &lt;span class=&quot;token comment&quot;&gt;#mongodb &lt;/span&gt;
-db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Users&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;find&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;{Lv:: { $gt: &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;}}&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[GitHub 블로그 만들기 by Gatsby]]></title><description><![CDATA[조건 github repository(username/github.io) npm node.js gatsby gh-pages 설치 Gatsby 코드 수정 GitHub]]></description><link>https://swedendry.github.io/github-blog-by-gatsby/</link><guid isPermaLink="false">https://swedendry.github.io/github-blog-by-gatsby/</guid><pubDate>Thu, 14 Nov 2019 17:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;조건&lt;/h2&gt;
+db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Users&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;find&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;{Lv:: { $gt: &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;}}&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[C# Linq 문법]]></title><description><![CDATA[Select SelectMany Where Orderby GroupBy Take Skip]]></description><link>https://swedendry.github.io/grammar/csharp/linq/</link><guid isPermaLink="false">https://swedendry.github.io/grammar/csharp/linq/</guid><pubDate>Fri, 15 Nov 2019 15:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Select&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c#&quot;&gt;&lt;pre class=&quot;language-c#&quot;&gt;&lt;code class=&quot;language-c#&quot;&gt;#lambda
+items.Select(item =&amp;gt; item.id)
+
+#query
+from item in items
+select item.id&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;SelectMany&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c#&quot;&gt;&lt;pre class=&quot;language-c#&quot;&gt;&lt;code class=&quot;language-c#&quot;&gt;#lambda
+items.SelectMany(item =&amp;gt; item.Stats)
+
+#query
+from item in items
+from stat in item.Stats
+select stat;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Where&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c#&quot;&gt;&lt;pre class=&quot;language-c#&quot;&gt;&lt;code class=&quot;language-c#&quot;&gt;#lambda
+items.Where(item =&amp;gt; item.count &amp;lt; 10)
+
+#query
+from item in items
+where item.count &amp;lt; 10
+select item&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Orderby&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c#&quot;&gt;&lt;pre class=&quot;language-c#&quot;&gt;&lt;code class=&quot;language-c#&quot;&gt;#lambda
+items.OrderBy(item =&amp;gt; item.Type).ThenByDescending(item =&amp;gt; item.Stats.Average())
+
+#query
+from item in items
+orderby item.Type ascending, item.Stats.Average() descending
+select item&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;GroupBy&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c#&quot;&gt;&lt;pre class=&quot;language-c#&quot;&gt;&lt;code class=&quot;language-c#&quot;&gt;#lambda
+items.GroupBy(item =&amp;gt; item.Type)
+
+#query
+from item in items
+group item by item.Type into g
+select g&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Take&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c#&quot;&gt;&lt;pre class=&quot;language-c#&quot;&gt;&lt;code class=&quot;language-c#&quot;&gt;#lambda
+items.Take(2)
+
+#query
+(from item in items
+ select item).Take(2)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Skip&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;c#&quot;&gt;&lt;pre class=&quot;language-c#&quot;&gt;&lt;code class=&quot;language-c#&quot;&gt;#lambda
+items.Skip(2)
+
+#query
+(from item in items
+ select item).Skip(2)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[GitHub 블로그 만들기 by Gatsby]]></title><description><![CDATA[조건 github repository(username/github.io) npm node.js gatsby gh-pages 설치 Gatsby 코드 수정 GitHub]]></description><link>https://swedendry.github.io/github-blog-by-gatsby/</link><guid isPermaLink="false">https://swedendry.github.io/github-blog-by-gatsby/</guid><pubDate>Thu, 14 Nov 2019 17:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;조건&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;github repository(username/github.io)&lt;/li&gt;
 &lt;li&gt;npm&lt;/li&gt;
