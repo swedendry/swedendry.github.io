@@ -79,3 +79,47 @@ items.Skip(2)
  select item).Skip(2)
 ```
 
+## GroupJoin
+```c#
+#lambda
+items.GroupJoin(
+costumes,
+item => item.Type,
+costume => costume.Type,
+(item, costumeGroup) => costumeGroup)
+
+#query
+from item in items
+join costume in costumes on item.Type equals costume.Type into costumeGroup
+select costumeGroup
+```
+
+## InnerJoin
+```c#
+#lambda
+items.Join(
+costumes,
+item => item.Type,
+costume => costume.Type,
+(item, costume) => new { Item = item, Costume = costume })
+
+#query
+from item in items
+join costume in costumes on item.Type equals costume.Type
+select new { Item = item, Costume = costume }
+```
+
+## OuterJoin
+```c#
+#lambda
+items.GroupJoin(
+costumes,
+item => item.Type,
+costume => costume.Type,
+(item, costumeGroup) => new { Item = item, CostumeGroup = costumeGroup })
+
+#query
+from item in items
+join costume in costumes on item.Type equals costume.Type into costumeGroup
+select new { Item = item, CostumeGroup = costumeGroup }
+```
