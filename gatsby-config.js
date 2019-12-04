@@ -122,6 +122,12 @@ module.exports = {
         name: "FaNetworkWired",
         color: "dimgray",
       },
+      {
+        tag: "google",
+        path: "Fa",
+        name: "FaGoogle",
+        color: "deepskyblue",
+      },
     ],
   },
   plugins: [

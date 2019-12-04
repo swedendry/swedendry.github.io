@@ -5,6 +5,13 @@ tags: ["grammar"]
 description: "Sql 문법"
 ---
 
+|query|sql|mongodb|
+|:---|:---|:---|
+|Select|select * from Users|db.Users.find()|
+|Where|select * from Users where Lv > 10|db.Users.find({Lv:: { $gt: 10}})|
+|Delete|delete from Users|db.Users.remove()|
+|Orderby|select * from Users order by Lv|db.Users.find().sort({"Lv": 1})|
+
 ## Select
 ```sql
 #mssql
@@ -13,10 +20,6 @@ select * from Users
 #mongodb
 db.Users.find()
 ```
-
-|sql|mongodb|
-|:---|:---|
-|select * from Users|db.Users.find()|
 
 ## Where
 ```sql
